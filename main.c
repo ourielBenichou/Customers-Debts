@@ -1,4 +1,5 @@
-#pragma once
+#ifndef Main
+#define Main
 #include"ReadPrintFile.h"
 #include"SelectQuery.h"
 
@@ -28,7 +29,7 @@ void main()
 	{
 		printf("\nEnter a choice/record:");
 		gets(buffer);
-		//πιϊεη δωΰιμϊδ
+		//Γ°Γ©ΓΊΓ₯Γ§ Γ€ΓΉΓ Γ©Γ¬ΓΊΓ€
 		getCommand(buffer, fDebt, head);
 	} while (strcmp(buffer, "quit"));
 
@@ -39,3 +40,4 @@ void main()
 	releaseLinkedList(head);
 	fclose(fDebt);
 }
+#endif 
