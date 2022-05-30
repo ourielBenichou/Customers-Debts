@@ -7,14 +7,15 @@ void main()
 {
 	customerList* head = NULL;
 	char* path = "Debts_File.txt",buffer[MAX_LINE];
-	FILE* fDebt = fopen(path, "r+t");
-	if (fDebt == NULL) {
-		do
-		{
-			printf("\nFile not Exist,Enter a new path :");
-			scanf("%s", path);
-		} while (fDebt == NULL);
-	}
+	FILE* fDebt;
+	
+	do
+	{
+		printf("\nFile not Exist,Enter a new path :");
+		scanf("%s", path);
+		fDebt = fopen(path, "r+t");
+	} while (fDebt == NULL);
+	
 	//covert file to linked list 
 	head = readFile(fDebt, head);
 	
@@ -29,7 +30,7 @@ void main()
 	{
 		printf("\nEnter a choice/record:");
 		gets(buffer);
-		//ðéúåç äùàéìúä
+		/*query of user */
 		getCommand(buffer, fDebt, head);
 	} while (strcmp(buffer, "quit"));
 
