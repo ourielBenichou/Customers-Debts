@@ -9,12 +9,12 @@ void main()
 	char* path = "Debts_File.txt",buffer[MAX_LINE];
 	FILE* fDebt;
 	
-	do
+	while (fDebt == NULL)
 	{
 		printf("\nFile not Exist,Enter a new path :");
 		scanf("%s", path);
 		fDebt = fopen(path, "r+t");
-	} while (fDebt == NULL);
+	} 
 	
 	//covert file to linked list 
 	head = readFile(fDebt, head);
