@@ -8,6 +8,7 @@ void main()
 	customerList* head = NULL;
 	char* path = "Debts_File.txt",buffer[MAX_LINE];
 	FILE* fDebt;
+	fDebt = fopen(path, "r+t");
 	
 	while (fDebt == NULL)
 	{
